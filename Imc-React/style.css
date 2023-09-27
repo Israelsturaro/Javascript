@@ -1,0 +1,41 @@
+.container{
+    max-width: 650px;
+    box-shadow: 0 0 10px black;
+   margin-top: -200px;
+   margin-left:  350px ;
+   display: flex;
+   align-items: center;
+   border-radius: 10px;
+    background-color: white;
+}
+h1{
+    margin: 1px;
+}
+#col2{
+    width: 10%; 
+    right: auto;
+}
+#col1{
+    margin-top: 20px;
+}
+input{
+    border-radius: 5%;
+    border-width: 1px;
+    padding: 7%; 
+    margin-left: 5%;
+}
+label{
+    width: 90%;
+    margin-top: 20%;
+}
+button{
+    margin-top: 7%;
+    margin-left: 40%;
+    
+}
+#imc{
+    margin-top: 20px;
+}
+body{
+    background-color: aqua;
+}

@@ -1,0 +1,66 @@
+import { useState } from 'react'
+import './css/API.css'
+import Form from "./Form"
+
+function Api(){
+
+    let [cep,setCEP] = useState()
+    let [num,setNUM] = useState()
+    let [bairro,setBAIRRO] = useState()
+    let [cidade,setCIDADE] = useState()
+    let [rua,setRUA] = useState()
+
+    async function pesquisar(){
+        //console.log(cep)
+
+        //Expressões Regex
+        let validacao = /^[0-9]{8}$/
+        if(!validacao.test(cep)){
+            throw console.error("CEP inválido")
+        }
+        let resposta =  await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+
+        if(!resposta.ok){
+            throw console.error("Erro na Solicitação")
+        }
+        resposta = await resposta.json()
+
+        let enderecos = []
+        enderecos.push(
+            {
+                "cep":cep,
+                "Rua":resposta.logradouro,
+                "Numero":num,
+                "bairro":resposta.bairro,
+                "Cidade":resposta.localidade,
+
+            }
+        )
+        setRUA(resposta.logradouro)
+        setBAIRRO(resposta.bairro)
+        setCIDADE(resposta.localidade)
+
+        console.log(enderecos)
+
+    }
+    return(
+        
+        <div className="Main">
+            <h2>Aula API</h2>
+            <label>Cep:</label>
+            <input type="text" placeholder="EX: 30580-140" id="cep" onChange={(e) => setCEP(e.target.value)}></input>
+            <label>Numero da Casa:</label>
+            <input type="text" placeholder="Ex: Nº100" id="num"onChange={(e) => setNUM(e.target.value)} ></input>
+            <label > bairro:</label>
+            <input type="text" placeholder="EX: bairro a" id="bairro" value={bairro}disabled></input>
+            <label> Cidade:</label>
+            <input type="text" placeholder="EX: Fortaleza" id="cidade" value={cidade} disabled></input>
+            <label>Rua:</label>
+            <input type="text" placeholder="EX: Parangaba" id="rua" value={rua} disabled></input>
+            <button onClick={pesquisar}> Calcular </button>
+        </div>
+        
+      
+   )
+}
+export default Api

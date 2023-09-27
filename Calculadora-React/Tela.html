@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="caixa">
+        <div id="col1">
+            <h1>Eventos DOM</h1>
+            <img src="Biel.png" alt="logomarca Google" id="logo">
+        </div>
+        <div id="col2">
+        <label>Primeiro Valor:</label>
+        <input type="text" class="v1">
+        <label>Segundo Valor:</label>
+        <input type="text" class="v2">
+        <button onclick="calcular()"> Calcular</button>
+        <div id="result"> Resultado da Soma</div>
+        <div id="result2"> Resultado da Subitração</div>
+        <div id="result3"> Resultado da Divisão</div>
+        <div id="result4"> Resultado da Mutiplicação </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    function calcular(){
+        let valor1 = document.querySelector('.v1').value
+        let valor2 = document.querySelector('.v2').value
+
+        let som = document.querySelector('#result')
+        let subi = document.querySelector('#result2')
+        let divi = document.querySelector('#result3')
+        let multi = document.querySelector('#result4')
+
+        let soma = Number(valor1) + Number(valor2)
+        let sub = Number(valor1) - Number(valor2)
+        let div = Number(valor1) / Number(valor2)
+        let mult = Number(valor1) * Number(valor2)
+
+        //console.log(soma)
+        som.innerText = soma
+        subi.innerText = sub
+        divi.innerText = div
+        multi.innerText = mult
+
+    }
+</script>
+</html>

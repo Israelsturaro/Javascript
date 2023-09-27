@@ -1,0 +1,67 @@
+#caixa{
+    max-width: 650px;
+    box-shadow: 0 0 10px black;
+    margin:  20% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: white;
+ }
+ #logo{
+     width: 200px;
+     height: 250px;
+     margin-left: 50px;
+     margin-bottom: 10px;
+ }
+ #col1{
+     width: 40%;   
+ }
+ #col2{
+     width: 60%;
+ }
+ input{
+     width: 95%;
+     border-radius: 10px;
+     border-width: 1px;
+     padding: 7px;
+     margin-top: 3%;
+ }
+ label{
+     width: 100%;
+     margin-top: 20%;
+ }
+ h1{
+     text-align: center;
+ }
+ button{
+     margin-top: 7%;
+     margin-left: 40%;
+ }
+ body{
+     background-color: aqua;
+ }
+ #result{
+     border: 1px solid black;
+     margin-top: 5%;
+     background-color: aqua;
+     text-align: center;
+ }
+ #result2{
+     border: 1px solid black;
+     margin-top: 5%;
+     background-color: aqua;
+     text-align: center;
+ }
+ #result3{
+     border: 1px solid black;
+     margin-top: 5%;
+     background-color: aqua;
+     text-align: center;
+ }
+ #result4{
+     border: 1px solid black;
+     margin-top: 5%;
+     background-color: aqua;
+     text-align: center;
+ }
